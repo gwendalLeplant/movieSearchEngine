@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <title>Movie search engine</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Search and results -->
+                <div class="divSearch">
+                    <div class="row">
+                        <div class="col-8">
+                            <input class="form-control" id="searchBar" placeholder="Movie's name">
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary" id="btnSearchMovie" onclick="searchMovie()">
+							<i class="fa fa-search"></i>
+						</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="divDisplayFilm"></div>
+            </div>
+            <div class="col-md-4">
+                <!-- Favorite list-->
+                <div id="divFavorites"></div>
+            </div>
+        </div>
+    </div>
+    <template id="templateDisplayFilm">
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <h3 id="movieName"></h3>
+            </div>
+            <div class="col-4">                
+                <button class="btn btn-success" onclick="addMovieToFav(this)">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-8">
+                        <h5 id="movieDescription"></h5>
+                    </div>
+                    <div class="col-4">
+                        <img id="moviePoster" width="120">
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </template>
+    <template id="templateFavorites">
+        <br>
+        <div class="row">
+            <div class="col-8">
+                <h6 id="movieName"></h6>
+            </div>
+            <div class="col-4">                
+                <button class="btn btn-danger" id="btnRemoveFromFavorite" onclick="removeMovieFromFav(this)">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+        </div>
+    </template>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
