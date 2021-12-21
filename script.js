@@ -24,7 +24,6 @@ function searchMovie() {
 
 async function getSpecificMoviePlot(movieName) {
     let url = apikey + "&t=" + movieName;
-    let plot = "";
     const response = await fetch(url);
     const movie = await response.json();
     return movie.Plot;
@@ -84,7 +83,7 @@ function displayMovieFromLocalStorageToFav() {
         // Clear favorites div
         clearDiv("#divFavorites");
         // Add to HTML
-        for (fav of tabFavorites) {
+        for (let fav of tabFavorites) {
             let newFavorite = document.importNode(
                 document.querySelector("#templateFavorites").content,
                 true
